@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { globalTimeline, type workCardType } from "../lib/utils";
 import WorkCard from "../components/workCard";
 import { useGSAP } from "@gsap/react";

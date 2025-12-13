@@ -1,5 +1,4 @@
 import { useGSAP } from "@gsap/react";
-import { useEffect } from "react";
 import { NavLink } from "react-router";
 import { globalTimeline } from "../lib/utils";
 import gsap from "gsap";
