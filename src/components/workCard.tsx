@@ -6,9 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 const WorkCard = (workCard: workCardType) => {
   const workCardRef = useRef<HTMLDivElement | null>(null)
 
- useEffect(() => {
-  const container = workCardRef.current
-  if (!container) return
+  useEffect(() => {
+    const container = workCardRef.current
+    if (!container) return
 
   const imageContainer = container.querySelector(".image-container")
   const title = container.querySelector("h2")

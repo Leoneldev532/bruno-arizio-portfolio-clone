@@ -1,8 +1,23 @@
+ @font-face {
+  font-family:"helveticanowtext" ;
+  src: url("../font/HelveticaNowText-Regular.ttf");
+ }
 
-@import "tailwindcss";
 
-*{
-  font-family:  Helvetica, "sans-serif";
+  @font-face {
+  font-family:"EBGaramond12" ;
+  src: url("../font/EBGaramond12-Regular.ttf");
+ }
+
+
+ @import "tailwindcss";
+ .helveticanowtext{
+  font-family: "helveticanowtext", sans-serif;
+}
+
+
+.EBGaramond12{
+  font-family: "EBGaramond12", serif !important;
 }
 
 li{
@@ -15,6 +30,7 @@ li{
 .show-work-card-container {
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
+
 /* .work-card-container{
   transform:translateX(-120px);
   transition:all .5s
@@ -31,4 +47,14 @@ span,h1,li,p,h1,h2,h3,h4,h5{
 
 html::-webkit-scrollbar {
   display: none;
+}
+
+.author-description  div  {
+ clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.author-description  div  div {
+  opacity:0;
+  transition:translateY(100px) !important;
+  transform: transition 0.5s 
 }
