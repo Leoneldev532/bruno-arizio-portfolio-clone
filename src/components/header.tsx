@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { NavLink, useLocation, useNavigate } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { globalTimeline } from "../lib/utils";
 import gsap from "gsap";
 import { useLenis } from "../lib/useLenis";
@@ -81,8 +81,8 @@ handleSetCurrentInfoProjectSelected({subTitle:null,title:null,year:null})
         </li>
          </div>
 
-          <div className="w-2/12 flex justify-end items-center">
-        <li className="overflow-hidden item-header-link text-xs">
+          <div className="w-2/12 flex justify-end relative items-center">
+        <li className=" relative  after:h-1.5 after:w-1.5  after:rounded-full after:absolute after:top-1.5 after:-left-5 after:bg-black after:content-[''] item-header-link text-xs">
             CET  {time}
         </li>
          </div>

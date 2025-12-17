@@ -79,7 +79,7 @@ const WorkCard = (workCard: workCardType) => {
 }, [workCard.image, workCard.onShowThumbnail]) 
 
   return (
-    <div ref={workCardRef} className='flex w-full h-20 workcard group gap-2'>
+    <div ref={workCardRef} className='flex w-full translate-x-[-100%] h-20 workcard group gap-2'>
       <div className='image-container h-20 w-10/12 lg:w-1/4'>
         {workCard.image && (
           <img src={workCard.image} className='w-full object-cover h-full' alt={workCard.title} />

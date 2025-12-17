@@ -1,35 +1,26 @@
-import { useEffect, useRef, useState } from "react";
+import {  useState } from "react";
 import { getworksList } from "../lib/data";
-import { globalTimeline, type workCardInSelectedModeType } from "../lib/utils";
 import WorkCardSelectedMode from "../components/workCardSelectedMode";
 import gsap from "gsap";
 import { useMyContext } from "../components/context/useMyContext";
+import { useGSAP } from "@gsap/react";
 
 const SelectedWorks = () => {
   const [currentProject, setCurrentProject] = useState<string>("./7.gif");
-  const [isMount, setIsMount] = useState<boolean>(false);
   const { handleSetCurrentInfoProjectSelected } = useMyContext();
 
-  useEffect(() => {
-    setIsMount(true)
+  useGSAP(() => {
     const workCardS = gsap.utils.toArray(".workcard-selected-mode");
-    globalTimeline.fromTo(workCardS,{
-      delay:1.5,
-      scale:1.5,
+    const tl = gsap.timeline()
+    tl.from(workCardS, {
+      scale: 1.4,
       x:-40,
-      opacity: 0,
-    }, {
-      scale: 1,
-      x:0,
+      duration:0.8,
+      ease:"expo.in",
       opacity: 1,
     });
 
-    // globalTimeline.from(workCardS,{
-    //   scale:1.5,
-    //   x:-40,
-    //   opacity: 0,
-    // });
-
+   
 
   }, []);
 
@@ -63,8 +54,8 @@ const hideProject = () => {
 
   return (
     <div className="flex   flex-col justify-center items-center relative w-full">
-  <div className="fixed show-project-container pointer-events-none opacity-0 z-0 bg-white/95 backdrop-grayscale-100 left-0 h-full w-full top-6 flex justify-center items-start pt-10">
-  <div className="w-[65%] show-project-container  bg-white h-[80%] absolute wrapper-image-work-selected pointer-events-none flex justify-center items-center">
+  <div className="fixed pt-32 lg:pt-10  show-project-container pointer-events-none opacity-0 z-0 bg-white/95 backdrop-grayscale-100 left-0 h-full w-full top-6 flex justify-center items-start ">
+  <div className="w-[80%] lg:w-[65%] show-project-container  bg-white h-[70%] lg:h-[80%] absolute wrapper-image-work-selected pointer-events-none flex justify-center items-center">
     <img
       src={currentProject}
       className="w-full h-full object-cover pointer-events-none"
@@ -73,7 +64,7 @@ const hideProject = () => {
   </div>
       </div>
 
-      <div className="grid z-0 absolute px-8 lg:px-24 pt-20 gap-y-4 grid-cols-3  xl:grid-cols-5 lg:gap-y-48 gap-x-10 lg:gap-x-28 w-full  h-full">
+      <div className="grid z-0 absolute px-8 lg:px-24 pt-20 gap-y-4 grid-cols-4  xl:grid-cols-5 lg:gap-y-48 gap-x-10 lg:gap-x-28 w-full  h-full">
         {worksList?.map((item, index: number) => (
           <WorkCardSelectedMode
             key={"wks" + index}

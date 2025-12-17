@@ -11,37 +11,34 @@ type WorkItem = {
  };
 
 
- 
-
-
 export const getworksList = (
   setter: (image: string) => void,
   showProject?: () => void,
   hideProject?: () => void,
-  handleSetCurrentInfoProjectSelected?: (data: { title?: string | null; subTitle?: string | null; year?: string | null }) => void
+  handleSetCurrentInfoProjectSelected?: (data: { title?: string | null | undefined; subTitle?: string | null | undefined; year?: string | null | undefined }) => void
 ): WorkItem[] => {
 
   return [
     {
-      image: "./7.gif",
+      image: "./brina-blum-nWX4pKwzLoE-unsplash.jpg",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./brina-blum-nWX4pKwzLoE-unsplash.jpg");
         showProject?.();
 
-        handleSetCurrentInfoProjectSelected?.(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
 
         console.log("IS me");
       },
       onShowThumbnail: (el) => {
-        setter(el || "./7.gif");
+        setter(el || "./brina-blum-nWX4pKwzLoE-unsplash.jpg");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -50,23 +47,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./12.gif",
+      image: "./don-kaveen-NFbwes_e-jI-unsplash.jpg",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./12.gif");
+        setter(el || "./don-kaveen-NFbwes_e-jI-unsplash.jpg");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -75,23 +72,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./14.gif",
+      image: "./frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./14.gif");
+        setter(el || "./frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -100,23 +97,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./bg.gif",
+      image: "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./bg.gif");
+        setter(el || "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -125,24 +122,24 @@ export const getworksList = (
       },
     },
     {
-      image: "./kid.webp",
+      image: "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
         setter(el || "./kid.webp");
         showProject?.();
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -151,23 +148,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./7.gif",
+      image: "./julia-WOsNIxMmyCA-unsplash.jpg",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./7.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -176,23 +173,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./12.gif",
+      image: "./kam-idris-_HqHX3LBN18-unsplash.jpg",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./12.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -201,23 +198,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./14.gif",
+      image: "./lotus-design-n-print-1vMz2_MclrM-unsplash.jpg",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./14.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -226,23 +223,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./bg.gif",
+      image: "./luke-stackpoole-eWqOgJ-lfiI-unsplash.jpg",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./bg.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -251,24 +248,24 @@ export const getworksList = (
       },
     },
     {
-      image: "./kid.webp",
+      image: "./minh-pham-OtXADkUh3-I-unsplash.jpg",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
         setter(el || "./kid.webp");
         showProject?.();
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -277,23 +274,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./7.gif",
+      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.jpg",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./7.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -302,23 +299,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./12.gif",
+      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.jpg",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./12.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -327,23 +324,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./14.gif",
+      image: "./spacejoy--7QwG_Gu2tg-unsplash (1).jpg",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./14.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -352,23 +349,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./bg.gif",
+      image: "./spacejoy--7QwG_Gu2tg-unsplash.jpg",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./bg.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -377,24 +374,24 @@ export const getworksList = (
       },
     },
     {
-      image: "./kid.webp",
+      image: "./spacejoy-IH7wPsjwomc-unsplash.jpg",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
         setter(el || "./kid.webp");
         showProject?.();
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -403,23 +400,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./7.gif",
+      image: "./spacejoy-umAXneH4GhA-unsplash.jpg",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./7.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -428,23 +425,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./12.gif",
+      image: "./brina-blum-nWX4pKwzLoE-unsplash.jpg",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./12.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -453,23 +450,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./14.gif",
+      image: "./don-kaveen-NFbwes_e-jI-unsplash.jpg",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./14.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -478,23 +475,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./bg.gif",
+      image: "./frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./bg.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -503,24 +500,24 @@ export const getworksList = (
       },
     },
     {
-      image: "./kid.webp",
+      image: "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
         setter(el || "./kid.webp");
         showProject?.();
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -529,23 +526,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./7.gif",
+      image: "./julia-WOsNIxMmyCA-unsplash.jpg",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./7.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -554,23 +551,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./12.gif",
+      image: "./kam-idris-_HqHX3LBN18-unsplash.jpg",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./12.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -579,23 +576,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./14.gif",
+      image: "./lotus-design-n-print-1vMz2_MclrM-unsplash.jpg",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./14.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -604,23 +601,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./bg.gif",
+      image: "./luke-stackpoole-eWqOgJ-lfiI-unsplash.jpg",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./bg.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -629,45 +626,45 @@ export const getworksList = (
       },
     },
     {
-      image: "./kid.webp",
+      image: "./minh-pham-OtXADkUh3-I-unsplash.jpg",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
         setter(el || "./kid.webp");
         showProject?.();
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected?.(null)
+        handleSetCurrentInfoProjectSelected?.({ title: null, subTitle: null, year: null })
         hideProject?.();
       },
     },
     {
-      image: "./7.gif",
+      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.jpg",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./7.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -676,23 +673,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./12.gif",
+      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.jpg",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./12.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -701,23 +698,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./14.gif",
+      image: "./spacejoy--7QwG_Gu2tg-unsplash (1).jpg",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./14.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -726,23 +723,23 @@ export const getworksList = (
       },
     },
     {
-      image: "./bg.gif",
+      image: "./spacejoy--7QwG_Gu2tg-unsplash.jpg",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./bg.gif");
+        setter(el || "./kid.webp");
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -751,24 +748,24 @@ export const getworksList = (
       },
     },
     {
-      image: "./kid.webp",
+      image: "./spacejoy-IH7wPsjwomc-unsplash.jpg",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
         setter(el || "./kid.webp");
         showProject?.();
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -787,13 +784,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -811,13 +808,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -835,13 +832,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -859,13 +856,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -883,13 +880,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -907,13 +904,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -931,13 +928,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -955,13 +952,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -979,13 +976,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1003,13 +1000,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1027,13 +1024,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1052,13 +1049,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1076,13 +1073,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1101,13 +1098,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1125,13 +1122,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1149,13 +1146,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1173,13 +1170,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1197,13 +1194,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1221,13 +1218,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null
@@ -1245,13 +1242,13 @@ export const getworksList = (
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./7.gif");
+        setter(el.image || "./kid.webp");
         showProject?.();
         
-        handleSetCurrentInfoProjectSelected(el)
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onLeave: () => {
-        handleSetCurrentInfoProjectSelected({
+        handleSetCurrentInfoProjectSelected?.({
           subTitle:null,
           title:null,
           year:null

@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { globalTimeline, type workCardType } from "../lib/utils";
 import WorkCard from "../components/workCard";
 import { useGSAP } from "@gsap/react";
-import { useLenis } from "../lib/useLenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getworksList } from "../lib/data";
@@ -16,12 +15,17 @@ const Home = () => {
   const showWorkCardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+
+    const workCards = document.querySelectorAll(".workcard")
+
     globalTimeline
       .to(
-        containerWorkCardRef?.current,
-        {
-          x: 0,
+        workCards,
+        { 
+          delay:2,
+          x: "0%",
           ease: "expo.out",
+          stagger:0.075
         },
         "-=0.5"
       )
@@ -71,7 +75,7 @@ const Home = () => {
     <div className="flex helveticanowtext   w-full px-4 pt-4 h-full justify-between ">
       <div
         ref={containerWorkCardRef}
-        className="w-3/12 md:w-2/12 -translate-x-50 transition-transform duration-300 ease-in work-card-container h-auto flex flex-col gap-20 "
+        className="w-3/12 md:w-2/12   work-card-container h-auto flex flex-col gap-20 "
       >
         {worksList?.map((item: workCardType, index: number) => (
           <WorkCard
@@ -108,7 +112,7 @@ const Home = () => {
           ref={showWorkCardRef}
           className="w-full h-[61vh] bg-black  mb-12 show-work-card-container overflow-hidden flex justify-center items-center "
         >
-          <img src={currentProject} className="w-[70%] h-[95%] object-cover" />
+          <img src={currentProject} className="w-[80%] lg:w-[70%] h-[95%] object-cover" />
         </div>
       </div>
     </div>

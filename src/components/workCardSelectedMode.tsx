@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { workCardInSelectedModeType } from "../lib/utils";
 import { useScreenWidth } from "../lib/useScreenWidth";
 
@@ -7,6 +7,7 @@ const WorkCardSelectedMode = (
 ) => {
   const workCardSelectedModeRef = useRef<HTMLDivElement | null>(null);
   const width = useScreenWidth()
+  const [isShown, setIsShown] = useState(false);
 
 
 useEffect(() => {
@@ -26,24 +27,34 @@ useEffect(() => {
     workCardInSelectedModeProps?.onLeave?.();
   };
 
+  const toggle = () => {
+    if (isShown) {
+      hide();
+      setIsShown(false);
+    } else {
+      show();
+      setIsShown(true);
+    }
+  };
+
   if (width > 850) {
     container.addEventListener("mouseenter", show);
     container.addEventListener("mouseleave", hide);
   } else {
-    container.addEventListener("click", show);
+    container.addEventListener("click", toggle);
   }
 
   return () => {
     container.removeEventListener("mouseenter", show);
     container.removeEventListener("mouseleave", hide);
-    container.removeEventListener("click", show);
+    container.removeEventListener("click", toggle);
   };
-}, [width]);
+}, [width, isShown]);
 
   return (
     <div
       ref={workCardSelectedModeRef}
-      className="flex flex-col -translate-x-10  transition-all ease-in duration-300 scale-100 opacity-100 w-[20vw] lg:w-full  overflow-hidden h-[40vw] cursor-pointer xl:h-[20vw] workcard-selected-mode justify-start items-start"
+      className="flex flex-col  opacity-100 w-[20vw] lg:w-full  overflow-hidden h-[40vw] cursor-pointer xl:h-[20vw] workcard-selected-mode justify-start items-start"
     >
       <div className="h-2/3 overflow-hidden w-full">
         {workCardInSelectedModeProps?.image && (
@@ -55,8 +66,8 @@ useEffect(() => {
 
       </div>
       
-        <div className="flex py-4 flex-col ">
-          <span className="text-[8px] sm:text-sm pb-1.5 lg:pb-3">{workCardInSelectedModeProps?.index}. </span>
+        <div className="flex py-2.5 flex-col ">
+          <span className="text-[6px] sm:text-sm pb-1.5 lg:pb-1">{workCardInSelectedModeProps?.index}. </span>
           <h2 className="font-semibold text-[8px] sm:text-xs">
             {workCardInSelectedModeProps?.title}{" "}
           </h2>

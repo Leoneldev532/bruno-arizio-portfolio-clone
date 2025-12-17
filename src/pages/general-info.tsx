@@ -49,7 +49,7 @@ const GeneralInfo = () => {
  examine the medium with a critical eye while producing work with intention.
         </p>
       </div>
-      <div className="pt-8 flex EBGaramond12 flex-col gap-8  w-full ">
+      <div className=" flex EBGaramond12 flex-col gap-8 pt-50   w-full ">
         <div className="flex flex-col gap-4 px-4">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {talks.map((talk, index) => (
