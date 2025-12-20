@@ -20,14 +20,14 @@ export const getworksList = (
 
   return [
     {
-      image: "./brina-blum-nWX4pKwzLoE-unsplash.jpg",
-      title: "Getty Research Institute",
-      subTitle: "Sculpting Harmony",
+      image: "./7.gif",
+      title: "Ly UI",
+      subTitle: "Component Library",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./brina-blum-nWX4pKwzLoE-unsplash.jpg");
+        setter(el.image || "./7.gif");
         showProject?.();
 
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
@@ -35,7 +35,7 @@ export const getworksList = (
         console.log("IS me");
       },
       onShowThumbnail: (el) => {
-        setter(el || "./brina-blum-nWX4pKwzLoE-unsplash.jpg");
+        setter(el || "./7.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -47,20 +47,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./don-kaveen-NFbwes_e-jI-unsplash.jpg",
-      title: "Obama Foundation",
-      subTitle: "Design Innovation",
+      image: "./12.gif",
+      title: "Smad Mail",
+      subTitle: "Email Platform",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./12.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./don-kaveen-NFbwes_e-jI-unsplash.jpg");
+        setter(el || "./12.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -72,20 +72,45 @@ export const getworksList = (
       },
     },
     {
-      image: "./frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg",
-      title: "Adobe",
-      subTitle: "Creative Solutions",
+      image: "./14.gif",
+      title: "The French Totothe",
+      subTitle: "Fashion Website",
+      moreInfos:{
+        year:"2024"
+      },
+      onHover: (el) => {
+        setter(el.image || "./14.gif");
+        showProject?.();
+
+        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
+      },
+      onShowThumbnail: (el) => {
+        setter(el || "./14.gif");
+      },
+      onLeave: () => {
+        handleSetCurrentInfoProjectSelected?.({
+          subTitle:null,
+          title:null,
+          year:null
+        })
+        hideProject?.();
+      },
+    },
+    {
+      image: "./bg.gif",
+      title: "Nice-carou",
+      subTitle: "Carousel Library",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./bg.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg");
+        setter(el || "./bg.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -97,32 +122,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg",
-      title: "Meta",
-      subTitle: "Digital Experiences",
-      moreInfos:{
-        year:"2025"
-      },
-      onHover: (el) => {
-        setter(el.image || "./kid.webp");
-        showProject?.();
-        
-        handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
-      },
-      onShowThumbnail: (el) => {
-        setter(el || "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg");
-      },
-      onLeave: () => {
-        handleSetCurrentInfoProjectSelected?.({
-          subTitle:null,
-          title:null,
-          year:null
-        })
-        hideProject?.();
-      },
-    },
-    {
-      image: "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg",
+      image: "./kam-idris-_HqHX3LBN18-unsplash.webp",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
@@ -148,7 +148,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./julia-WOsNIxMmyCA-unsplash.jpg",
+      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.webp",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
@@ -173,7 +173,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./kam-idris-_HqHX3LBN18-unsplash.jpg",
+      image: "./kam-idris-_HqHX3LBN18-unsplash.webp",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
@@ -198,7 +198,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./lotus-design-n-print-1vMz2_MclrM-unsplash.jpg",
+      image: "./lotus-design-n-print-1vMz2_MclrM-unsplash.webp",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
@@ -223,7 +223,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./luke-stackpoole-eWqOgJ-lfiI-unsplash.jpg",
+      image: "./kid.webp",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
@@ -248,7 +248,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./minh-pham-OtXADkUh3-I-unsplash.jpg",
+      image: "./kid.webp",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
@@ -274,7 +274,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.jpg",
+      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.webp",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
@@ -299,7 +299,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.jpg",
+      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.webp",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
@@ -324,7 +324,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy--7QwG_Gu2tg-unsplash (1).jpg",
+      image: "./kid.webp",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
@@ -349,7 +349,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy--7QwG_Gu2tg-unsplash.jpg",
+      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.webp",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
@@ -374,7 +374,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy-IH7wPsjwomc-unsplash.jpg",
+      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.webp",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{
@@ -400,7 +400,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy-umAXneH4GhA-unsplash.jpg",
+      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.webp",
       title: "Getty Research Institute",
       subTitle: "Sculpting Harmony",
       moreInfos:{
@@ -425,7 +425,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./brina-blum-nWX4pKwzLoE-unsplash.jpg",
+      image: "./7.gif",
       title: "Obama Foundation",
       subTitle: "Design Innovation",
       moreInfos:{
@@ -450,7 +450,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./don-kaveen-NFbwes_e-jI-unsplash.jpg",
+      image: "./spacejoy - 7QwG_Gu2tg-unsplash.webp",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
@@ -475,7 +475,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg",
+      image: "./frames-for-your-heart-2d4lAQAlbDA-unsplash.webp",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
@@ -500,20 +500,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg",
-      title: "Samsung",
-      subTitle: "Technology Integration",
+      image: "./7.gif",
+      title: "Github Sign-Up",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./7.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./7.gif");
         showProject?.();
       },
       onLeave: () => {
@@ -526,20 +526,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./julia-WOsNIxMmyCA-unsplash.jpg",
-      title: "Getty Research Institute",
-      subTitle: "Sculpting Harmony",
+      image: "./14.gif",
+      title: "Nomadi",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./14.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./14.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -551,20 +551,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./kam-idris-_HqHX3LBN18-unsplash.jpg",
-      title: "Obama Foundation",
-      subTitle: "Design Innovation",
+      image: "./14.gif",
+      title: "Go Meal",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./14.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./14.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -576,20 +576,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./lotus-design-n-print-1vMz2_MclrM-unsplash.jpg",
-      title: "Adobe",
-      subTitle: "Creative Solutions",
+      image: "./bg.gif",
+      title: "Humanity Afghanistan",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./bg.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./bg.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -601,20 +601,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./luke-stackpoole-eWqOgJ-lfiI-unsplash.jpg",
-      title: "Meta",
-      subTitle: "Digital Experiences",
+      image: "./7.gif",
+      title: "Blindspot",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./7.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./7.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -626,20 +626,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./minh-pham-OtXADkUh3-I-unsplash.jpg",
-      title: "Samsung",
-      subTitle: "Technology Integration",
+      image: "./12.gif",
+      title: "FLAMIN HOT",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./12.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./12.gif");
         showProject?.();
       },
       onLeave: () => {
@@ -648,20 +648,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.jpg",
-      title: "Getty Research Institute",
-      subTitle: "Sculpting Harmony",
+      image: "./12.gif",
+      title: "Biccas",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./12.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./12.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -673,20 +673,20 @@ export const getworksList = (
       },
     },
     {
-      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.jpg",
-      title: "Obama Foundation",
-      subTitle: "Design Innovation",
+      image: "./bg.gif",
+      title: "African Market",
+      subTitle: "Landing Page",
       moreInfos:{
         year:"2025"
       },
       onHover: (el) => {
-        setter(el.image || "./kid.webp");
+        setter(el.image || "./bg.gif");
         showProject?.();
-        
+
         handleSetCurrentInfoProjectSelected?.({ title: el.title, subTitle: el.subTitle, year: el.year })
       },
       onShowThumbnail: (el) => {
-        setter(el || "./kid.webp");
+        setter(el || "./bg.gif");
       },
       onLeave: () => {
         handleSetCurrentInfoProjectSelected?.({
@@ -698,7 +698,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy--7QwG_Gu2tg-unsplash (1).jpg",
+      image: "./kid.webp",
       title: "Adobe",
       subTitle: "Creative Solutions",
       moreInfos:{
@@ -723,7 +723,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy--7QwG_Gu2tg-unsplash.jpg",
+      image: "./roberto-nickson-rEJxpBskj3Q-unsplash.webp",
       title: "Meta",
       subTitle: "Digital Experiences",
       moreInfos:{
@@ -748,7 +748,7 @@ export const getworksList = (
       },
     },
     {
-      image: "./spacejoy-IH7wPsjwomc-unsplash.jpg",
+      image: "./rowan-heuvel-bjej8BY1JYQ-unsplash.webp",
       title: "Samsung",
       subTitle: "Technology Integration",
       moreInfos:{

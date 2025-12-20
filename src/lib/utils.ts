@@ -2,11 +2,7 @@ import gsap from "gsap";
 import type { ReactNode } from "react";
 
   
-  export const globalTimeline =  gsap.timeline({
-    duration:0.7,
-     ease:"power3.out",
-      delay:2
-  })
+  export const globalTimeline =  gsap.timeline()
  
               export type workCardType = {
                   image:string,

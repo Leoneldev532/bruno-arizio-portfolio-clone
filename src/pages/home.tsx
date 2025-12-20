@@ -15,34 +15,43 @@ const Home = () => {
   const showWorkCardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-
+    const tl = gsap.timeline()
     const workCards = document.querySelectorAll(".workcard")
 
-    globalTimeline
+    tl
       .to(
         workCards,
         { 
-          delay:2,
+          delay:0,
           x: "0%",
-          ease: "expo.out",
-          stagger:0.075
-        },
-        "-=0.5"
-      )
-      .fromTo(
-        showWorkCardRef?.current,
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+           duration:1.5,
+          ease:"expo.inOut",
+          stagger:{
+            each:0.045,
+            from:"start"
+          }
         },
         "<"
       )
-      .to(".summary-home-page", {
+
+      globalTimeline.to(
+        showWorkCardRef?.current,
+        {
+          duration:1.5,
+          ease:"expo.inOut",
+          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+          
+        },
+        "<"
+      )
+
+      globalTimeline.to(".summary-home-page", {
         opacity: 1,
         y: 0,
-      });
+            duration:1.5,
+          ease:"expo.inOut",
+      },"<");
+
   }, []);
 
   useGSAP(() => {
@@ -91,20 +100,20 @@ const Home = () => {
       <div className="w-9/12 md:w-10/12 h-full flex-col  part-2 flex   justify-between items-center">
         <div className="h-[30vh] summary-home-page relative pt-4 md:pt-0 -top-6   w-full flex flex-col justify-between items-center">
           <p className="text-left  max-w-sm font-semibold text-xs    text-black/40">
-            Bruno Arizio Selected Works General Info CET 02:21 AM Globally
-            recognized Independent Designer and Creative Director based in the
-            Netherlands. Working at the intersection of design, art, and
-            photography with a host of international clients that includes the
-            J. Paul Getty Museum, Frank O. Gehry and Partners, The Obama
-            Foundation, Gates Foundation, Delta Airlines, Adobe, Meta, Adidas,
-            VanMoof, Lexus, Toyota, Samsung, Ecco®, and more.
+            Leonel Yimga Passionate  Front-End Developer specializing in modern web technologies. Based in
+            Cameroon. Creating interactive and responsive user experiences with
+            expertise in React, JavaScript, HTML, CSS, and more. Worked on
+            projects including component libraries, email platforms, and fashion
+            websites.
           </p>
           <div className="text-left w-full max-w-sm font-semibold text-xs  flex flex-col justify-start ">
-            <span>For inquiries:</span>
-            <a href="mailto:hello@brunoarizio.com" className="underline ">
-              {" "}
-              hello@brunoarizio.com{" "}
-            </a>
+            <span>Featured Projects:</span>
+            <ul className="list-disc list-inside">
+              <li><a href="https://ly-ui.dev" className="underline">Ly UI (Component Library)</a></li>
+              <li><a href="https://smadmail.com/" className="underline">Smad Mail</a></li>
+              <li><a href="https://fashion-website-indol-nine.vercel.app/" className="underline">The French Totothe</a></li>
+              <li><a href="mailto:leonelyimga@gmail.com" className="hover:underline">leonelyimga@gmail.com</a></li>
+            </ul>
           </div>
         </div>
 

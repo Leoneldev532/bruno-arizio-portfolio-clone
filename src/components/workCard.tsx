@@ -25,7 +25,8 @@ const WorkCard = (workCard: workCardType) => {
 
 
    tl.to(imageContainer, {
-    clipPath: "polygon(15% 20%, 70% 15%, 82% 82%, 20% 70%)",
+    
+          clipPath: "polygon(25% 25%,75% 25%,75% 75%,25% 75%)",
     duration: 0.3,
     ease: "power2.out"
   })
@@ -86,7 +87,7 @@ const WorkCard = (workCard: workCardType) => {
         )}
       </div>
 
-      <div className='hidden lg:flex flex-col lg:w-2/3 gap-0.5 justify-center items-start'>
+      <div className='flex flex-col lg:w-2/3 gap-0.5 justify-center items-start'>
         <h2 className="text-xs font-semibold">{workCard.title}</h2>
         <span className="text-black/70 text-xs">{workCard.subTitle}</span>
       </div>
