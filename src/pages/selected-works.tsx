@@ -14,7 +14,8 @@ const SelectedWorks = () => {
   useGSAP(() => {
     const workCardS = gsap.utils.toArray(".workcard-selected-mode");
     const tl = gsap.timeline();
-    tl.from(workCardS, {
+    if(width > 850) {
+       tl.from(workCardS, {
       scale: 1.4,
       x: -40,
       duration: 0.8,
@@ -22,7 +23,9 @@ const SelectedWorks = () => {
       opacity: 0,
       stagger: 0.02,
     });
-  }, []);
+    }
+   
+  }, [width]);
 
   const showProject = () => {
     gsap.to(".show-project-container", {
@@ -72,6 +75,14 @@ const SelectedWorks = () => {
           if (width < 850) setTimeout(hideProject, 3000);
         }}
       >
+        {width < 850 && (
+          <button
+            onClick={hideProject}
+            className="absolute top-4 right-4 z-10 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
+          >
+            ×
+          </button>
+        )}
         <div className="w-[80%] lg:w-[65%] show-project-container  bg-white h-[70%] lg:h-[80%] absolute wrapper-image-work-selected pointer-events-none flex justify-center items-center">
           <img
             src={currentProject}
@@ -81,7 +92,7 @@ const SelectedWorks = () => {
         </div>
       </div>
 
-      <div className="grid z-0 absolute px-8 lg:px-24 pt-20 gap-y-4 grid-cols-4  xl:grid-cols-5 lg:gap-y-48 gap-x-10 lg:gap-x-28 w-full  h-full">
+      <div className="grid z-0 absolute px-8 lg:px-24 pt-20 gap-y-4 grid-cols-2  md:grid-cols-4 xl:grid-cols-5 lg:gap-y-48 gap-x-10 lg:gap-x-28 w-full  h-full">
         {worksList?.map((item, index: number) => (
           <WorkCardSelectedMode
             key={"wks" + index}

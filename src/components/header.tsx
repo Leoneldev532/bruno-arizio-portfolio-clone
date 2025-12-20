@@ -59,31 +59,34 @@ handleSetCurrentInfoProjectSelected({subTitle:null,title:null,year:null})
   return (
     <header className="px-4 py-1 h-auto z-10  helveticanowtext  z-[9999] w-full fixed bg-white  overflow-hidden ">
       <ul className="w-full h-full font-semibold   flex  justify-between items-center">
-        <div className="w-8/12 gap-4 sm:w-8/12 md:w-5/12 pr-4 flex justify-between items-center">
+        <div className="w-full gap-4 md:w-5/12 pr-4 flex justify-between items-center">
         <li className="overflow-hidden item-header-link ">
-        {currentInfoProjectSelected?.title ?  <span className=" text-[10px] sm:text-xs"> {currentInfoProjectSelected.title}</span> :  <NavLink to="/" className={"underline  text-[10px] sm:text-xs"} >
+        {currentInfoProjectSelected?.title ?  <span className=" text-xs"> {currentInfoProjectSelected.title}</span> :  <NavLink to="/" className={"text-xs relative group flex flex-col gap-y-2"} >
             {" "}
             Leonel Yimga
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
           </NavLink>}
         </li>
         <li className="overflow-hidden item-header-link">
-            {currentInfoProjectSelected?.subTitle ?  <span className=" text-[10px] sm:text-xs"> {currentInfoProjectSelected.subTitle} </span> :  
-          <NavLink to="/selected-works" className={"underline  text-[10px] sm:text-xs"} >
+            {currentInfoProjectSelected?.subTitle ?  <span className=" text-xs"> {currentInfoProjectSelected.subTitle} </span> :
+          <NavLink to="/selected-works" className={"text-xs relative group flex flex-col gap-y-2"} >
             {" "}
             Selected Works
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
           </NavLink> }
         </li>
         <li className="overflow-hidden item-header-link">
-            {currentInfoProjectSelected?.year ?  <span className=" text-[10px] sm:text-xs"> {currentInfoProjectSelected.year}</span> :  
-          <NavLink to="/general-info" className={"underline  text-[10px] sm:text-xs"} >
+            {currentInfoProjectSelected?.year ?  <span className=" text-xs"> {currentInfoProjectSelected.year}</span> :
+          <NavLink to="/general-info" className={"text-xs relative group flex flex-col gap-y-2"} >
             {" "}
             General Info
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
           </NavLink> }
         </li>
          </div>
 
-          <div className="w-auto sm:w-2/12 flex justify-end relative items-center">
-        <li className=" relative  after:h-1.5 after:w-1.5  after:rounded-full after:absolute after:top-1.5 after:-left-5 after:bg-black after:content-[''] item-header-link  text-[10px] sm:text-xs">
+          <div className="w-auto  md:w-2/12 hidden md:flex justify-end relative items-center">
+        <li className=" relative  after:h-1.5 after:w-1.5  after:rounded-full after:absolute after:top-1.5 after:-left-5 after:bg-black after:content-[''] item-header-link  text-xs">
             CET  {time}
         </li>
          </div>

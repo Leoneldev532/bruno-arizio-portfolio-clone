@@ -36,9 +36,14 @@ li{
   transition:all .5s
 } */
 
-.summary-home-page{
-  opacity:0;
-  transform:translateY(50px);
+.summary-home-page p{
+  line-height: 1.2em;
+  /* clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); */
+}
+
+.summary-home-page p div{
+  line-height: 1.2em;
+  overflow:hidden
 }
 
 span,h1,li,p,h1,h2,h3,h4,h5{

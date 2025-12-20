@@ -87,7 +87,7 @@ const WorkCard = (workCard: workCardType) => {
         )}
       </div>
 
-      <div className='flex flex-col lg:w-2/3 gap-0.5 justify-center items-start'>
+      <div className='lg:flex flex-col hidden lg:w-2/3 gap-0.5 justify-center items-start'>
         <h2 className="text-xs font-semibold">{workCard.title}</h2>
         <span className="text-black/70 text-xs">{workCard.subTitle}</span>
       </div>

@@ -42,7 +42,7 @@ const GeneralInfo = () => {
       <div className="pt-8 flex EBGaramond12 flex-col gap-8 lg:max-w-[70%] w-full ">
         <p className="author-description  px-4 w-full  text-2xl ">
 
-          Leonel YimGA is a passionate front-end developer with a strong focus on creating engaging web experiences. His work combines modern technologies with creative animations to deliver intuitive user interfaces.
+          Leonel Yimga is a passionate front-end developer with a strong focus on creating engaging web experiences. His work combines modern technologies with creative animations to deliver intuitive user interfaces.
         </p>
         <p className="author-description    px-4 w-full  text-2xl">
           His portfolio showcases a variety of projects, from component libraries to email platforms and fashion websites, all built with cutting-edge tools like React, Next.js, and GSAP.
@@ -59,7 +59,14 @@ const GeneralInfo = () => {
                 <h3 className="text-lg text-neutral-700 font-medium">{talk.title}</h3>
                 <div className="flex flex-col gap-y-2">
 
-                {talk.links.map((link, i) => <p key={i} className="text-sm font-semibold underline">{link}</p>)}
+                {talk.links.map((link, i) => {
+                  const [description, tech] = link.split(' - ');
+                  return (
+                    <p key={i} className="text-sm font-semibold">
+                      {description} - <span className="underline">{tech}</span>
+                    </p>
+                  );
+                })}
               </div>
               </div>
             ))}

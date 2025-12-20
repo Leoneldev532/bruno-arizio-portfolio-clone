@@ -54,7 +54,7 @@ useEffect(() => {
   return (
     <div
       ref={workCardSelectedModeRef}
-      className="flex flex-col  opacity-100 w-[20vw] lg:w-full  overflow-hidden h-[40vw] cursor-pointer xl:h-[20vw] workcard-selected-mode justify-start items-start"
+      className="flex flex-col  opacity-100 w-full md:w-[20vw] lg:w-full  overflow-hidden h-[50vw] md:h-[40vw] cursor-pointer xl:h-[20vw] workcard-selected-mode justify-start items-start"
     >
       <div className="h-2/3 overflow-hidden w-full">
         {workCardInSelectedModeProps?.image && (
@@ -67,11 +67,11 @@ useEffect(() => {
       </div>
       
         <div className="flex py-2.5 flex-col ">
-          <span className="text-[6px] sm:text-sm pb-1.5 lg:pb-1">{workCardInSelectedModeProps?.index}. </span>
+          <span className="text-sm pb-1.5 lg:pb-1">{workCardInSelectedModeProps?.index}. </span>
           <h2 className="font-semibold text-[8px] sm:text-xs">
             {workCardInSelectedModeProps?.title}{" "}
           </h2>
-          <span className="text-[8px] sm:text-xs text-gray-400">{workCardInSelectedModeProps?.subTitle} </span>
+          <span className="text-sm sm:text-xs text-gray-400">{workCardInSelectedModeProps?.subTitle} </span>
         </div>
     </div>
   );

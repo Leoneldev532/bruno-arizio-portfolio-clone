@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getworksList } from "../lib/data";
+import { SplitText } from "gsap/SplitText";
 
 const Home = () => {
   const [currentProject, setCurrentProject] = useState<string>("./7.gif");
@@ -15,6 +16,8 @@ const Home = () => {
   const showWorkCardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    
+    gsap.registerPlugin(ScrollTrigger,SplitText);
     const tl = gsap.timeline()
     const workCards = document.querySelectorAll(".workcard")
 
@@ -45,11 +48,22 @@ const Home = () => {
         "<"
       )
 
-      globalTimeline.to(".summary-home-page", {
-        opacity: 1,
-        y: 0,
-            duration:1.5,
-          ease:"expo.inOut",
+      const summaryHomePage = document.querySelectorAll(".summary-home-page p")
+
+      const summaryWords =  SplitText.create(summaryHomePage,{type:"words",mask:"lines"})
+    
+      gsap.set(summaryWords.words,{
+        y:"140%"
+      })
+      
+
+      globalTimeline.to(summaryWords.words, {
+        delay:0.4,
+        y: "0%",
+        stagger:{
+          amount:0.2,
+        }, 
+          ease:"power2.out",
       },"<");
 
   }, []);
@@ -84,7 +98,7 @@ const Home = () => {
     <div className="flex helveticanowtext   w-full px-4 pt-4 h-full justify-between ">
       <div
         ref={containerWorkCardRef}
-        className="w-3/12 md:w-2/12   work-card-container h-auto flex flex-col gap-20 "
+        className="w-3/12  md:w-2/12   work-card-container h-auto hidden md:flex flex-col gap-20 "
       >
         {worksList?.map((item: workCardType, index: number) => (
           <WorkCard
@@ -97,31 +111,26 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="w-9/12 md:w-10/12 h-full flex-col  part-2 flex   justify-between items-center">
-        <div className="h-[30vh] summary-home-page relative pt-4 md:pt-0 -top-6   w-full flex flex-col justify-between items-center">
-          <p className="text-left  max-w-sm font-semibold text-xs    text-black/40">
-            Leonel Yimga Passionate  Front-End Developer specializing in modern web technologies. Based in
-            Cameroon. Creating interactive and responsive user experiences with
-            expertise in React, JavaScript, HTML, CSS, and more. Worked on
-            projects including component libraries, email platforms, and fashion
-            websites.
+      <div className="w-full md:w-10/12 h-full flex-col  part-2 flex   justify-between items-start md:items-center">
+        <div className="h-[30vh] summary-home-page relative   w-full flex flex-col gap-y-8 items-start md:items-center">
+          <p className="text-left lg:max-w-lg font-semibold text-xs    text-black/40">
+            Leonel Yimga, a passionate Front-End Developer specializing in modern web technologies. Based in
+            Cameroon, I craft interactive and responsive user experiences with
+            expertise in React, JavaScript, TypeScript, HTML, CSS, and frameworks like Next.js. My portfolio includes
+            projects such as reusable component libraries, dynamic email platforms, and elegant fashion e-commerce websites.
+            I am committed to writing clean, efficient code and staying up-to-date with the latest industry trends to deliver
+            high-quality digital solutions.
           </p>
-          <div className="text-left w-full max-w-sm font-semibold text-xs  flex flex-col justify-start ">
-            <span>Featured Projects:</span>
-            <ul className="list-disc list-inside">
-              <li><a href="https://ly-ui.dev" className="underline">Ly UI (Component Library)</a></li>
-              <li><a href="https://smadmail.com/" className="underline">Smad Mail</a></li>
-              <li><a href="https://fashion-website-indol-nine.vercel.app/" className="underline">The French Totothe</a></li>
-              <li><a href="mailto:leonelyimga@gmail.com" className="hover:underline">leonelyimga@gmail.com</a></li>
-            </ul>
-          </div>
+          <p className="text-left w-full lg:max-w-lg font-semibold text-xs  flex flex-col justify-start ">
+              leonelyimga@gmail.com
+          </p>
         </div>
 
         <div
           ref={showWorkCardRef}
-          className="w-full h-[61vh] bg-black  mb-12 show-work-card-container overflow-hidden flex justify-center items-center "
+          className="w-full h-[40vh] md:h-[51vh] bg-black  md:mb-12 show-work-card-container overflow-hidden flex justify-center items-center "
         >
-          <img src={currentProject} className="w-[80%] lg:w-[70%] h-[95%] object-cover" />
+          <img src={currentProject} className="w-[80%] lg:w-[70%] lg:h-[90%] h-[85%] object-cover" />
         </div>
       </div>
     </div>
