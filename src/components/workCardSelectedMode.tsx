@@ -68,7 +68,7 @@ useEffect(() => {
       
         <div className="flex py-2.5 flex-col ">
           <span className="text-sm pb-1.5 lg:pb-1">{workCardInSelectedModeProps?.index}. </span>
-          <h2 className="font-semibold text-[8px] sm:text-xs">
+          <h2 className="font-semibold text-sm sm:text-xs">
             {workCardInSelectedModeProps?.title}{" "}
           </h2>
           <span className="text-sm sm:text-xs text-gray-400">{workCardInSelectedModeProps?.subTitle} </span>

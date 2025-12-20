@@ -47,6 +47,11 @@ const SelectedWorks = () => {
       zIndex: 0,
       overwrite: "auto",
     });
+    handleSetCurrentInfoProjectSelected({
+      subTitle:null,
+      title:null,
+      year:null
+    })
   };
 
   const worksList = useMemo(
@@ -80,7 +85,10 @@ const SelectedWorks = () => {
             onClick={hideProject}
             className="absolute top-4 right-4 z-10 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
           >
-            ×
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
           </button>
         )}
         <div className="w-[80%] lg:w-[65%] show-project-container  bg-white h-[70%] lg:h-[80%] absolute wrapper-image-work-selected pointer-events-none flex justify-center items-center">

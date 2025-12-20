@@ -121,8 +121,9 @@ const Home = () => {
             I am committed to writing clean, efficient code and staying up-to-date with the latest industry trends to deliver
             high-quality digital solutions.
           </p>
-          <p className="text-left w-full lg:max-w-lg font-semibold text-xs  flex flex-col justify-start ">
-              leonelyimga@gmail.com
+          <p className="text-left w-full lg:max-w-lg  text-xs  flex flex-col justify-start ">
+              <span>for inquiries</span>
+              <a href="mailto:leonelyimga@gmail.com" className="underline font-semibold">leonelyimga@gmail.com</a>
           </p>
         </div>
 

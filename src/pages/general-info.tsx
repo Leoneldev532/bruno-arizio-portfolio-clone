@@ -5,19 +5,19 @@ import { SplitText } from "gsap/SplitText";
 const GeneralInfo = () => {
 
   const talks = [
-    { title: "Ly UI", links: ["Component Library - Next.js, Tailwind, React"] },
-    { title: "Smad Mail", links: ["Email Platform - Next.js, Tailwind, GSAP, Prisma"] },
-    { title: "The French Totothe", links: ["Fashion Website - Next.js, Tailwind, GSAP"] },
-    { title: "Nice-carou", links: ["Carousel Library Website - Next.js, Tailwind"] },
-    { title: "Github Sign-Up", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "Biccas", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "Go Meal", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "Humanity Afghanistan", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "Blindspot", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "FLAMIN HOT", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "Nomadi", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "African Market", links: ["Landing Page - Next.js, Tailwind"] },
-    { title: "Template Waitlist Form", links: ["Waitlist Form - Next.js, Tailwind"] }
+    { title: "Ly UI", url: "#" },
+    { title: "Smad Mail", url: "#" },
+    { title: "The French Totothe", url: "#" },
+    { title: "Nice-carou", url: "#" },
+    { title: "Github Sign-Up", url: "#" },
+    { title: "Biccas", url: "#" },
+    { title: "Go Meal", url: "#" },
+    { title: "Humanity Afghanistan", url: "#" },
+    { title: "Blindspot", url: "#" },
+    { title: "FLAMIN HOT", url: "#" },
+    { title: "Nomadi", url: "#" },
+    { title: "African Market", url: "#" },
+    { title: "Template Waitlist Form", url: "#" }
   ];
 
         useGSAP(()=>{
@@ -56,18 +56,7 @@ const GeneralInfo = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {talks.map((talk, index) => (
               <div key={index} className="flex flex-col gap-2">
-                <h3 className="text-lg text-neutral-700 font-medium">{talk.title}</h3>
-                <div className="flex flex-col gap-y-2">
-
-                {talk.links.map((link, i) => {
-                  const [description, tech] = link.split(' - ');
-                  return (
-                    <p key={i} className="text-sm font-semibold">
-                      {description} - <span className="underline">{tech}</span>
-                    </p>
-                  );
-                })}
-              </div>
+                <a href={talk.url} className="text-lg text-neutral-700 font-medium underline">{talk.title}</a>
               </div>
             ))}
           </div>
